@@ -10,7 +10,7 @@ import com._604robotics.robotnik.module.ModuleMap;
 public class Robot2010 extends Robot {
     public Robot2010 () {
         this.set(new ModuleMap() {{
-            add("Drivee", new Drive());
+            add("Drive", new Drive());
             add("Shifter", new Shifter());
         }});
         

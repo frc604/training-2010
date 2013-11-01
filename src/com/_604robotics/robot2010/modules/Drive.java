@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Victor;
 
 public class Drive extends Module {
-    private final RobotDrive drive = new RobotDrive(new Victor(1), new Victor(5));
+    private final RobotDrive drive = new RobotDrive(new Victor(5), new Victor(8), new Victor(7), new Victor(6));
     
     public Drive () {
         this.set(new ElasticController () {{
@@ -18,7 +18,7 @@ public class Drive extends Module {
                 define("right", 0D);
             }}) {
                 public void run (ActionData data) {
-                    drive.tankDrive(data.get("left"), data.get("rightt"));
+                    drive.tankDrive(data.get("left"), data.get("right"));
                 }
                 
                 public void end (ActionData data) {

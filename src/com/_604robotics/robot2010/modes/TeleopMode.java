@@ -10,20 +10,23 @@ import com._604robotics.robotnik.trigger.TriggerAccess;
 
 public class TeleopMode extends Coordinator {
     private final JoystickController leftDriveStick = new JoystickController(1);
-    private final JoystickController rightDriveStick = new JoystickController(1);
+    private final JoystickController rightDriveStick = new JoystickController(2);
     
     public TeleopMode () {
         this.leftDriveStick.axisY.setDeadband(0.2);
         this.rightDriveStick.axisY.setDeadband(0.2);
+        
+        this.leftDriveStick.axisY.setFactor(-1);
+        this.rightDriveStick.axisY.setFactor(-1);
     }
     
     public void apply (ModuleManager modules) {
-        /* Drive Controller */
+        /* Drive Controllers */
         {
             /* Drive */
             {
-                this.fill(new DataWire(modules.getModule("Drive").getAction("Drive"), "left", leftDriveStick.axisY));
-                this.fill(new DataWire(modules.getModule("Drive").getAction("Drive"), "right", rightDriveStick.axisY));
+                this.fill(new DataWire(modules.getModule("Drive").getAction("Tank Drive"), "left", leftDriveStick.axisY));
+                this.fill(new DataWire(modules.getModule("Drive").getAction("Tank Drive"), "right", rightDriveStick.axisY));
             }
             
             /* Shifting */
