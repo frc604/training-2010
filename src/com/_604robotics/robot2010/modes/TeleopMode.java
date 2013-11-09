@@ -34,13 +34,16 @@ public class TeleopMode extends Coordinator {
                 this.bind(new Binding(modules.getModule("Shifter").getAction("High Gear"), new TriggerOr(new TriggerAccess[] {
                     leftDriveStick.buttons.Button1, rightDriveStick.buttons.Button1
                 })));
-            }            
+            }
             
             /* Kicker */
             {
-                this.bind(new Binding(modules.getModule("Kicker").getAction("Extend"), new TriggerOr(new TriggerAccess[] {
-                    leftDriveStick.buttons.Button3, rightDriveStick.buttons.Button3
-                })));
+                this.bind(new Binding(modules.getModule("Kicker").getAction("Kick"), leftDriveStick.buttons.Button3));
+            }
+            
+            /* Piston */
+            {
+                this.bind(new Binding(modules.getModule("Piston").getAction("Extend"), rightDriveStick.buttons.Button3));
             }
         }
     }

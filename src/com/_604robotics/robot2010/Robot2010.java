@@ -3,6 +3,7 @@ package com._604robotics.robot2010;
 import com._604robotics.robot2010.modes.TeleopMode;
 import com._604robotics.robot2010.modules.Drive;
 import com._604robotics.robot2010.modules.Kicker;
+import com._604robotics.robot2010.modules.Piston;
 import com._604robotics.robot2010.modules.Regulator;
 import com._604robotics.robot2010.modules.Shifter;
 import com._604robotics.robotnik.Robot;
