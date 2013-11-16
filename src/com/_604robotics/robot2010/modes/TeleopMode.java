@@ -43,7 +43,7 @@ public class TeleopMode extends Coordinator {
             
             /* Piston */
             {
-                this.bind(new Binding(modules.getModule("Piston").getAction("Extend"), rightDriveStick.buttons.Button3));
+                this.bind(new Binding(modules.getModule("Piston").getAction("Retract"), rightDriveStick.buttons.Button3));
             }
         }
     }
